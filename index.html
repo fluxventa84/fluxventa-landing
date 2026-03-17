@@ -6,6 +6,15 @@
     <meta name="description" content="FluxVenta - Automatización comercial con IA para PYMEs. Responde automáticamente a tus clientes 24/7 y deja de perder ventas.">
     <meta name="keywords" content="automatización comercial, WhatsApp Business, CRM, IA, PYMEs, Chile">
     <meta name="author" content="FluxVenta">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZEQDYVFY9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-NZEQDYVFY9');
+    </script>
     <meta property="og:title" content="FluxVenta - Automatización Comercial con IA">
     <meta property="og:description" content="Sistema que responde automáticamente a tus clientes 24/7, hace seguimiento sin olvidar a nadie, y ordena todos tus leads en un solo lugar.">
     <meta property="og:type" content="website">
@@ -1064,6 +1073,133 @@
             }
         }
 
+        /* ========== WHATSAPP MOCK ========== */
+        .whatsapp-mock {
+            background: #ECE5DD;
+            border-radius: 16px;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .mock-header {
+            background: #075E54;
+            color: white;
+            padding: 1rem 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .mock-avatar {
+            width: 42px;
+            height: 42px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.875rem;
+            flex-shrink: 0;
+        }
+
+        .mock-info strong {
+            display: block;
+            font-size: 0.95rem;
+        }
+
+        .mock-info span {
+            font-size: 0.75rem;
+            opacity: 0.85;
+            color: #25D366;
+        }
+
+        .mock-body {
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            max-height: 340px;
+            overflow-y: auto;
+        }
+
+        .mock-msg {
+            max-width: 82%;
+            padding: 0.6rem 0.875rem;
+            border-radius: 10px;
+            font-size: 0.875rem;
+            line-height: 1.45;
+            position: relative;
+        }
+
+        .mock-msg p { margin: 0; }
+
+        .mock-msg.received {
+            background: white;
+            align-self: flex-start;
+            border-top-left-radius: 2px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .mock-msg.sent {
+            background: #DCF8C6;
+            align-self: flex-end;
+            border-top-right-radius: 2px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .mock-time {
+            display: block;
+            font-size: 0.68rem;
+            color: #999;
+            text-align: right;
+            margin-top: 0.2rem;
+        }
+
+        .mock-footer {
+            background: #f0f0f0;
+            padding: 0.75rem 1.25rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--gray);
+            border-top: 1px solid #ddd;
+        }
+
+        /* ========== FAQ SECTION ========== */
+        .faq {
+            background: var(--light);
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.25rem;
+            margin-top: 2.5rem;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--secondary);
+        }
+
+        .faq-item h4 {
+            font-size: 0.95rem;
+            color: var(--primary);
+            margin-bottom: 0.6rem;
+            font-weight: 600;
+        }
+
+        .faq-item p {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin: 0;
+            line-height: 1.55;
+        }
+
         /* ========== ANIMATIONS ========== */
         @keyframes fadeInUp {
             from {
@@ -1095,6 +1231,7 @@
                 <a href="#problema">El Problema</a>
                 <a href="#solucion">Solución</a>
                 <a href="#proceso">Cómo Funciona</a>
+                <a href="#faq">FAQ</a>
                 <a href="#inversion">Inversión</a>
                 <a href="#contacto" class="nav-cta">Contactar</a>
             </nav>
@@ -1122,17 +1259,59 @@
                         </svg>
                         Agenda tu llamada gratuita
                     </a>
-                    <a href="https://wa.me/56951022966?text=Hola%2C%20vi%20su%20página%20web%20y%20me%20interesa%20saber%20más%20sobre%20la%20automatización%20comercial%20para%20mi%20negocio." class="btn btn-whatsapp" target="_blank">
+                    <a href="https://wa.me/56951022966?text=Hola%2C%20quiero%20probar%20el%20sistema%20en%20vivo" class="btn btn-whatsapp" target="_blank">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                         </svg>
-                        Escríbenos por WhatsApp
+                        Ver demo en vivo →
                     </a>
                 </div>
                 <p class="hero-note">Para PYMEs con 50+ consultas mensuales por WhatsApp</p>
+                <p class="hero-note" style="margin-top:0.25rem;">👆 El botón verde abre WhatsApp y el sistema responde al instante. Probalo.</p>
             </div>
             <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Dashboard de automatización comercial">
+                <div class="whatsapp-mock">
+                    <div class="mock-header">
+                        <div class="mock-avatar">FV</div>
+                        <div class="mock-info">
+                            <strong>Asistente FluxVenta</strong>
+                            <span>● En línea</span>
+                        </div>
+                    </div>
+                    <div class="mock-body">
+                        <div class="mock-msg received">
+                            <p>Hola 👋 Soy el asistente de FluxVenta. ¿En qué rubro está tu negocio?</p>
+                            <span class="mock-time">09:00</span>
+                        </div>
+                        <div class="mock-msg sent">
+                            <p>Tengo una inmobiliaria</p>
+                            <span class="mock-time">09:01</span>
+                        </div>
+                        <div class="mock-msg received">
+                            <p>Perfecto. ¿Cuántas consultas reciben por WhatsApp al mes aproximadamente?</p>
+                            <span class="mock-time">09:01</span>
+                        </div>
+                        <div class="mock-msg sent">
+                            <p>Unas 80 consultas</p>
+                            <span class="mock-time">09:02</span>
+                        </div>
+                        <div class="mock-msg received">
+                            <p>Bien. ¿Ese seguimiento lo hacen de forma manual hoy?</p>
+                            <span class="mock-time">09:02</span>
+                        </div>
+                        <div class="mock-msg sent">
+                            <p>Sí, todo manual</p>
+                            <span class="mock-time">09:03</span>
+                        </div>
+                        <div class="mock-msg received">
+                            <p>Tenemos un flujo específico para inmobiliarias. ¿Querés ver una mini demo de cómo respondería el sistema a uno de tus clientes? 👇</p>
+                            <span class="mock-time">09:03</span>
+                        </div>
+                    </div>
+                    <div class="mock-footer">
+                        <div class="mock-typing">El sistema respondió en <strong>&lt;2 seg</strong></div>
+                    </div>
+                </div>
                 <div class="stats-badge">
                     <div class="icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1141,8 +1320,8 @@
                         </svg>
                     </div>
                     <div class="text">
-                        <strong>Respuesta &lt;5 seg</strong>
-                        <span>24/7 automático</span>
+                        <strong>El bot responde &lt;5 seg</strong>
+                        <span>Tu equipo solo habla con leads listos</span>
                     </div>
                 </div>
             </div>
@@ -1306,6 +1485,42 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Preguntas frecuentes</h2>
+                <p>Las dudas más comunes antes de agendar una llamada</p>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>¿Usan WhatsApp Business API oficial?</h4>
+                    <p>Sí. Trabajamos exclusivamente con la API oficial de Meta (WhatsApp Cloud API). Esto garantiza que tu número no sea suspendido y que la integración sea estable a largo plazo.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>¿Qué pasa si la IA no sabe responder algo?</h4>
+                    <p>El sistema detecta cuándo una consulta supera su alcance y transfiere la conversación a un miembro de tu equipo, con un resumen del contexto incluido. Nunca inventa información.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>¿Cómo se hace el traspaso al equipo humano?</h4>
+                    <p>El bot califica el lead y, cuando está listo para hablar con una persona, notifica a tu equipo con el historial completo de la conversación. El traspaso es invisible para el cliente.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>¿Qué CRM usan o con cuál se integran?</h4>
+                    <p>Implementamos el CRM incluido en la solución o nos integramos con el que ya uses. En la llamada de diagnóstico evaluamos qué tiene más sentido para tu operación actual.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>¿Qué necesita mi negocio para empezar?</h4>
+                    <p>Un número de WhatsApp Business (puede ser el que ya usás), acceso a tu cuenta de Meta Business y 30 minutos para la llamada de diagnóstico. Nosotros hacemos el resto.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>¿Qué incluye el servicio mensual?</h4>
+                    <p>Monitoreo del sistema, ajustes de flujos, optimización de respuestas del bot, soporte ante incidencias y una revisión mensual de métricas contigo. El sistema no queda solo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Inversión Section -->
     <section class="inversion" id="inversion">
         <div class="container">
@@ -1346,15 +1561,15 @@
                     <h2>¿Tienes preguntas?</h2>
                     <p>Escríbenos o agenda una llamada. Respondemos en menos de 2 horas en horario laboral.</p>
                     <div class="contacto-methods">
-                        <a href="https://wa.me/56951022966?text=Hola%2C%20tengo%20una%20consulta%20sobre%20FluxVenta" class="contact-method" target="_blank">
+                        <a href="https://wa.me/56951022966?text=Hola%2C%20quiero%20probar%20el%20sistema%20en%20vivo" class="contact-method" target="_blank">
                             <div class="method-icon">
                                 <svg viewBox="0 0 24 24" fill="#25D366">
                                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                                 </svg>
                             </div>
                             <div class="method-text">
-                                <strong>WhatsApp</strong>
-                                <span>Respuesta inmediata</span>
+                                <strong>Ver demo en vivo</strong>
+                                <span>El bot responde al instante — probalo ahora</span>
                             </div>
                         </a>
                         <a href="/cdn-cgi/l/email-protection#d0b3bfbea4b1b3a4bf90b6bca5a8a6b5bea4b1feb3bfbd" class="contact-method">
@@ -1422,7 +1637,8 @@
                         <input type="hidden" name="_subject" value="Nuevo lead desde FluxVenta.com">
                         <input type="hidden" name="_next" value="https://www.fluxventa.com/?enviado=true">
                         <button type="submit" class="btn btn-primary form-submit">Enviar mensaje</button>
-                        <p class="form-note">Responderemos en menos de 2 horas en horario laboral</p>
+                        <p class="form-note">Responderemos en menos de 2 horas en horario laboral (lun–vie 9:00–18:00)</p>
+                        <p class="form-note" style="margin-top:0.5rem; font-size:0.8rem;">Tus datos se usan únicamente para coordinar la llamada. <a href="/privacidad.html" target="_blank" style="color:var(--secondary);">Ver Política de Privacidad</a></p>
                     </form>
                 </div>
             </div>
@@ -1444,11 +1660,11 @@
                     </svg>
                     Agenda tu llamada gratuita
                 </a>
-                <a href="https://wa.me/56951022966?text=Hola%2C%20quiero%20agendar%20una%20llamada%20de%20diagnóstico%20para%20mi%20negocio" class="btn btn-whatsapp" target="_blank">
+                <a href="https://wa.me/56951022966?text=Hola%2C%20quiero%20probar%20el%20sistema%20en%20vivo" class="btn btn-whatsapp" target="_blank">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                     </svg>
-                    O escríbenos por WhatsApp
+                    O ver demo en vivo por WhatsApp
                 </a>
             </div>
             <p class="cta-note">Sin compromiso • 30 minutos • Te mostramos cómo funcionaría en tu negocio</p>
@@ -1467,7 +1683,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2026 FluxVenta. Todos los derechos reservados.</p>
+                <p>© 2026 FluxVenta. Todos los derechos reservados. · <a href="/privacidad.html" style="color:rgba(255,255,255,0.6); text-decoration:underline;">Política de Privacidad</a></p>
             </div>
         </div>
     </footer>

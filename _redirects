@@ -1,0 +1,17 @@
+# Netlify Redirects - FluxVenta
+# Redirige URLs antiguas (patrón Wix/builder) a la home
+
+/portfolio                  /       301
+/portfolio/*                /       301
+/service-page/*             /       301
+/services/*                 /       301
+/about                      /       301
+/about-us                   /       301
+/contact                    /#contacto  301
+/blog                       /       301
+/blog/*                     /       301
+/page/*                     /       301
+
+# Alias útiles
+/privacidad                 /privacidad.html    301
+/privacy                    /privacidad.html    301
