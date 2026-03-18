@@ -1351,6 +1351,291 @@
             }
         }
 
+        /* ========== SIMULADOR ROI SECTION ========== */
+        .simulador {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .simulador .section-header h2 {
+            color: var(--white);
+        }
+
+        .simulador .section-header p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .simulador-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 2.5rem;
+        }
+
+        .simulador-inputs {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .sim-group label {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .sim-group .sim-value {
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .sim-group input[type="range"] {
+            width: 100%;
+            -webkit-appearance: none;
+            appearance: none;
+            height: 6px;
+            border-radius: 3px;
+            background: rgba(255, 255, 255, 0.2);
+            outline: none;
+        }
+
+        .sim-group input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: var(--accent);
+            cursor: pointer;
+            border: 2px solid var(--white);
+        }
+
+        .sim-group input[type="range"]::-moz-range-thumb {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: var(--accent);
+            cursor: pointer;
+            border: 2px solid var(--white);
+        }
+
+        .sim-group select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            font-size: 0.95rem;
+            font-family: inherit;
+        }
+
+        .sim-group select option {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .simulador-outputs {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .sim-result-label {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 0.5rem;
+        }
+
+        .sim-result-main {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #FC8181;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .sim-result-secondary-label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 0.25rem;
+        }
+
+        .sim-result-secondary {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #FBD38D;
+            margin-bottom: 1rem;
+        }
+
+        .sim-result-tertiary {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1.5rem;
+        }
+
+        .sim-disclaimer {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.45);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        .sim-cta {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            align-items: center;
+        }
+
+        .sim-cta .btn {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .sim-cta .btn-primary {
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        .sim-cta .btn-primary:hover {
+            background: #2F855A;
+        }
+
+        .sim-cta .sim-link {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .sim-cta .sim-link:hover {
+            color: var(--white);
+        }
+
+        @media (max-width: 768px) {
+            .simulador-container {
+                grid-template-columns: 1fr;
+                padding: 1.5rem;
+            }
+        }
+
+        /* ========== VERTICALES SECTION ========== */
+        .verticales {
+            background: var(--white);
+        }
+
+        .verticales-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .vertical-card {
+            background: var(--light);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .vertical-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent));
+        }
+
+        .vertical-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .vertical-card .v-icon {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+            line-height: 1;
+        }
+
+        .vertical-card h3 {
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        .vertical-card .v-situacion {
+            font-size: 0.875rem;
+            color: var(--gray);
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #E2E8F0;
+        }
+
+        .vertical-card .v-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .vertical-card .v-lista {
+            list-style: none;
+            margin-bottom: 1.25rem;
+        }
+
+        .vertical-card .v-lista li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--dark);
+        }
+
+        .vertical-card .v-lista li::before {
+            content: '✓';
+            color: var(--accent);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .vertical-card .v-cierre {
+            font-style: italic;
+            color: var(--secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        .verticales-cta {
+            text-align: center;
+            margin-top: 2.5rem;
+        }
+
+        .verticales-cta p {
+            color: var(--gray);
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .verticales-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         /* ========== ANIMATIONS ========== */
         @keyframes fadeInUp {
             from {
@@ -1382,7 +1667,8 @@
                 <a href="#problema">El Problema</a>
                 <a href="#solucion">Solución</a>
                 <a href="#proceso">Cómo Funciona</a>
-                <a href="#faq">FAQ</a>
+                <a href="#simulador">Simulador</a>
+                <a href="#rubros">Rubros</a>
                 <a href="#inversion">Inversión</a>
                 <a href="#contacto" class="nav-cta">Contactar</a>
             </nav>
@@ -1636,38 +1922,122 @@
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="faq" id="faq">
+    <!-- Simulador de ROI Section -->
+    <section class="simulador" id="simulador">
         <div class="container">
             <div class="section-header">
-                <h2>Preguntas frecuentes</h2>
-                <p>Las dudas más comunes antes de agendar una llamada</p>
+                <h2>¿Cuánto te está costando no automatizar?</h2>
+                <p>Calcula en 30 segundos lo que pierdes cada mes por respuesta tardía o falta de seguimiento.</p>
             </div>
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <h4>¿Usan WhatsApp Business API oficial?</h4>
-                    <p>Sí. Al usar la API oficial de WhatsApp Cloud API de Meta, minimizamos el riesgo de suspensión y garantizamos integraciones estables, siempre operando dentro de las políticas oficiales de la plataforma.</p>
+            <div class="simulador-container">
+                <div class="simulador-inputs">
+                    <div class="sim-group">
+                        <label>Consultas/mes por WhatsApp <span class="sim-value" id="sim-consultas-val">80</span></label>
+                        <input type="range" id="sim-consultas" min="20" max="500" value="80" step="10">
+                    </div>
+                    <div class="sim-group">
+                        <label>Tiempo promedio de primera respuesta</label>
+                        <select id="sim-respuesta">
+                            <option value="menos-30">Menos de 30 min</option>
+                            <option value="30-2h">30 min a 2 horas</option>
+                            <option value="2-6h" selected>2 a 6 horas</option>
+                            <option value="mas-6h">Más de 6 horas</option>
+                        </select>
+                    </div>
+                    <div class="sim-group">
+                        <label>Ticket promedio (CLP) <span class="sim-value" id="sim-ticket-val">$300.000</span></label>
+                        <input type="range" id="sim-ticket" min="50000" max="5000000" value="300000" step="50000">
+                    </div>
+                    <div class="sim-group">
+                        <label>Tasa de cierre actual <span class="sim-value" id="sim-cierre-val">20%</span></label>
+                        <input type="range" id="sim-cierre" min="5" max="60" value="20" step="1">
+                    </div>
                 </div>
-                <div class="faq-item">
-                    <h4>¿Qué pasa si la IA no sabe responder algo?</h4>
-                    <p>El sistema detecta cuándo una consulta supera su alcance y transfiere la conversación a un miembro de tu equipo, con un resumen del contexto incluido. Nunca inventa información.</p>
+                <div class="simulador-outputs">
+                    <p class="sim-result-label">Estás perdiendo aproximadamente</p>
+                    <p class="sim-result-main" id="sim-perdida-mes">$0</p>
+                    <p class="sim-result-secondary-label">Equivale a</p>
+                    <p class="sim-result-secondary"><span id="sim-perdida-anio">$0</span> al año</p>
+                    <p class="sim-result-tertiary">Basado en <span id="sim-leads-perdidos">0</span> leads sin contactar a tiempo cada mes</p>
+                    <p class="sim-disclaimer">Estimación orientativa basada en datos de la industria. Los resultados reales dependen de múltiples factores del negocio.</p>
+                    <div class="sim-cta">
+                        <a href="https://calendly.com/alejandro-fluxventa/30min" class="btn btn-primary" target="_blank">Quiero recuperar esas ventas → Agenda tu diagnóstico</a>
+                        <a href="https://wa.me/56951022966?text=Hola%2C%20quiero%20ver%20una%20demo%20de%20FluxVenta" class="sim-link" target="_blank">Ver cómo funciona en mi rubro →</a>
+                    </div>
                 </div>
-                <div class="faq-item">
-                    <h4>¿Cómo se hace el traspaso al equipo humano?</h4>
-                    <p>El bot califica el lead y, cuando está listo para hablar con una persona, notifica a tu equipo con el historial completo de la conversación. El traspaso es invisible para el cliente.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tarjetas por Vertical Section -->
+    <section class="verticales" id="rubros">
+        <div class="container">
+            <div class="section-header">
+                <h2>Diseñado para tu tipo de negocio</h2>
+                <p>Cada implementación se adapta al flujo real de tu rubro.</p>
+            </div>
+            <div class="verticales-grid">
+                <div class="vertical-card">
+                    <div class="v-icon">🏠</div>
+                    <h3>Inmobiliarias y agentes independientes</h3>
+                    <p class="v-situacion">Consultas de portales (Portal Inmobiliario, Yapo) que llegan fuera de horario y no tienen seguimiento sistemático.</p>
+                    <p class="v-label">Qué automatiza FluxVenta</p>
+                    <ul class="v-lista">
+                        <li>Respuesta inmediata a consultas de cualquier portal</li>
+                        <li>Calificación: tipo de propiedad, zona, presupuesto, urgencia</li>
+                        <li>Agendamiento automático de visitas</li>
+                        <li>Seguimiento a leads que no respondieron en 24-48h</li>
+                    </ul>
+                    <p class="v-cierre">Tu agente responde mientras muestras propiedades.</p>
                 </div>
-                <div class="faq-item">
-                    <h4>¿Qué CRM usan o con cuál se integran?</h4>
-                    <p>Implementamos el CRM incluido en la solución o nos integramos con el que ya uses. En la llamada de diagnóstico evaluamos qué tiene más sentido para tu operación actual.</p>
+                <div class="vertical-card">
+                    <div class="v-icon">💆</div>
+                    <h3>Clínicas y centros de estética</h3>
+                    <p class="v-situacion">Consultas por Instagram y WhatsApp mezcladas, sin registro. Recepción saturada con preguntas repetitivas de precios y disponibilidad.</p>
+                    <p class="v-label">Qué automatiza FluxVenta</p>
+                    <ul class="v-lista">
+                        <li>Respuesta a consultas de tratamientos frecuentes</li>
+                        <li>Calificación por tipo de tratamiento e interés</li>
+                        <li>Agendamiento de consultas iniciales</li>
+                        <li>Recordatorios automáticos para reducir no-shows</li>
+                    </ul>
+                    <p class="v-cierre">Menos tiempo respondiendo, más tiempo atendiendo.</p>
                 </div>
-                <div class="faq-item">
-                    <h4>¿Qué necesita mi negocio para empezar?</h4>
-                    <p>Un número de WhatsApp Business (puede ser el que ya usas), acceso a tu cuenta de Meta Business y 30 minutos para la llamada de diagnóstico. Nosotros hacemos el resto.</p>
+                <div class="vertical-card">
+                    <div class="v-icon">🤝</div>
+                    <h3>Servicios profesionales B2B</h3>
+                    <p class="v-situacion">Leads que llegan por LinkedIn o referidos y no reciben respuesta rápida. Proceso de calificación lento y manual.</p>
+                    <p class="v-label">Qué automatiza FluxVenta</p>
+                    <ul class="v-lista">
+                        <li>Primera respuesta y calificación de empresa, tamaño y necesidad</li>
+                        <li>Filtrado de leads según criterios de tu ICP</li>
+                        <li>Agendamiento de reunión de diagnóstico</li>
+                        <li>Seguimiento hasta confirmar la reunión</li>
+                    </ul>
+                    <p class="v-cierre">Solo hablas con leads ya calificados.</p>
                 </div>
-                <div class="faq-item">
-                    <h4>¿Qué incluye el servicio mensual?</h4>
-                    <p>Monitoreo del sistema, ajustes de flujos, optimización de respuestas del bot, soporte ante incidencias y una revisión mensual de métricas contigo. El sistema no queda solo.</p>
+                <div class="vertical-card">
+                    <div class="v-icon">🎓</div>
+                    <h3>Academias, cursos y formación</h3>
+                    <p class="v-situacion">Consultas sobre programas, precios y fechas que se pierden o se responden días después. Alta rotación de interesados.</p>
+                    <p class="v-label">Qué automatiza FluxVenta</p>
+                    <ul class="v-lista">
+                        <li>Información instantánea sobre programas y fechas</li>
+                        <li>Calificación por perfil, objetivo y urgencia</li>
+                        <li>Inscripción o agendamiento de llamada informativa</li>
+                        <li>Seguimiento a interesados que no completaron el proceso</li>
+                    </ul>
+                    <p class="v-cierre">Ningún interesado se va sin información.</p>
                 </div>
+            </div>
+            <div class="verticales-cta">
+                <p>¿Tu rubro no está aquí? Igual podemos ayudarte.</p>
+                <a href="https://wa.me/56951022966?text=Hola%2C%20quiero%20ver%20una%20demo%20de%20FluxVenta" class="btn btn-whatsapp" target="_blank">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
+                    Cuéntanos tu caso →
+                </a>
             </div>
         </div>
     </section>
@@ -1709,6 +2079,42 @@
                         <li>Horas de gestión manual por semana ahorradas: 8-12h</li>
                     </ul>
                     <p class="card-note">Ejemplo representativo. Los resultados varían según volumen y proceso previo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Preguntas frecuentes</h2>
+                <p>Las dudas más comunes antes de agendar una llamada</p>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>¿Usan WhatsApp Business API oficial?</h4>
+                    <p>Sí. Al usar la API oficial de WhatsApp Cloud API de Meta, minimizamos el riesgo de suspensión y garantizamos integraciones estables, siempre operando dentro de las políticas oficiales de la plataforma.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>¿Qué pasa si la IA no sabe responder algo?</h4>
+                    <p>El sistema detecta cuándo una consulta supera su alcance y transfiere la conversación a un miembro de tu equipo, con un resumen del contexto incluido. Nunca inventa información.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>¿Cómo se hace el traspaso al equipo humano?</h4>
+                    <p>El bot califica el lead y, cuando está listo para hablar con una persona, notifica a tu equipo con el historial completo de la conversación. El traspaso es invisible para el cliente.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>¿Qué CRM usan o con cuál se integran?</h4>
+                    <p>Implementamos el CRM incluido en la solución o nos integramos con el que ya uses. En la llamada de diagnóstico evaluamos qué tiene más sentido para tu operación actual.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>¿Qué necesita mi negocio para empezar?</h4>
+                    <p>Un número de WhatsApp Business (puede ser el que ya usas), acceso a tu cuenta de Meta Business y 30 minutos para la llamada de diagnóstico. Nosotros hacemos el resto.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>¿Qué incluye el servicio mensual?</h4>
+                    <p>Monitoreo del sistema, ajustes de flujos, optimización de respuestas del bot, soporte ante incidencias y una revisión mensual de métricas contigo. El sistema no queda solo.</p>
                 </div>
             </div>
         </div>
@@ -2024,6 +2430,43 @@
             el.style.opacity = '1';
             observer.observe(el);
         });
+
+        // ROI Simulator
+        function formatCLP(n) {
+            return '$' + Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+        }
+
+        function updateSimulator() {
+            var consultas = parseInt(document.getElementById('sim-consultas').value);
+            var respuesta = document.getElementById('sim-respuesta').value;
+            var ticket = parseInt(document.getElementById('sim-ticket').value);
+            var cierre = parseInt(document.getElementById('sim-cierre').value) / 100;
+
+            document.getElementById('sim-consultas-val').textContent = consultas;
+            document.getElementById('sim-ticket-val').textContent = formatCLP(ticket);
+            document.getElementById('sim-cierre-val').textContent = Math.round(cierre * 100) + '%';
+
+            var factores = {
+                'menos-30': 0.10,
+                '30-2h': 0.25,
+                '2-6h': 0.45,
+                'mas-6h': 0.65
+            };
+            var factor = factores[respuesta] || 0.45;
+
+            var leadsPerdidos = Math.round(consultas * factor);
+            var ventasMes = leadsPerdidos * cierre * ticket;
+            var ventasAnio = ventasMes * 12;
+
+            document.getElementById('sim-perdida-mes').textContent = formatCLP(ventasMes);
+            document.getElementById('sim-perdida-anio').textContent = formatCLP(ventasAnio);
+            document.getElementById('sim-leads-perdidos').textContent = leadsPerdidos;
+        }
+
+        document.querySelectorAll('#simulador input, #simulador select').forEach(function(el) {
+            el.addEventListener('input', updateSimulator);
+        });
+        updateSimulator();
     </script>
 </body>
 </html>
