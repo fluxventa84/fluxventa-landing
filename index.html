@@ -1200,6 +1200,157 @@
             line-height: 1.55;
         }
 
+        /* ========== RESULTADOS SECTION ========== */
+        .resultados {
+            background: var(--white);
+        }
+
+        .resultados-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .resultado-card {
+            background: var(--light);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid #E2E8F0;
+            transition: var(--transition);
+        }
+
+        .resultado-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-5px);
+        }
+
+        .resultado-card .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .resultado-card .card-icon {
+            font-size: 1.75rem;
+            line-height: 1;
+        }
+
+        .resultado-card .card-header h3 {
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        .resultado-card .card-header span {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--gray);
+            font-weight: 400;
+            margin-top: 0.15rem;
+        }
+
+        .resultado-card .situacion-previa {
+            background: rgba(229, 62, 62, 0.06);
+            border-left: 3px solid var(--error);
+            padding: 0.75rem 1rem;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.875rem;
+            color: var(--dark);
+            margin-bottom: 1.25rem;
+            font-style: italic;
+        }
+
+        .resultado-card .situacion-previa p { margin: 0; }
+
+        .resultado-card .resultados-lista {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        .resultado-card .resultados-lista li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            margin-bottom: 0.6rem;
+            font-size: 0.9rem;
+            color: var(--dark);
+        }
+
+        .resultado-card .resultados-lista li::before {
+            content: '▸';
+            color: var(--accent);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .resultado-card .card-note {
+            font-size: 0.75rem;
+            color: var(--gray);
+            font-style: italic;
+            margin: 0;
+            padding-top: 0.75rem;
+            border-top: 1px solid #E2E8F0;
+        }
+
+        /* ========== INVERSION TWO-COLUMN ========== */
+        .inversion-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto 2rem;
+        }
+
+        .inversion-block {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .inversion-block h3 {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .inversion-block .block-subtitle {
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-bottom: 1.25rem;
+            font-weight: 500;
+        }
+
+        .inversion-block ul {
+            list-style: none;
+        }
+
+        .inversion-block ul li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--dark);
+            font-size: 0.95rem;
+        }
+
+        .inversion-block ul li::before {
+            content: '✓';
+            color: var(--accent);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 768px) {
+            .resultados-grid,
+            .inversion-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         /* ========== ANIMATIONS ========== */
         @keyframes fadeInUp {
             from {
@@ -1257,9 +1408,9 @@
                             <line x1="8" y1="2" x2="8" y2="6"></line>
                             <line x1="3" y1="10" x2="21" y2="10"></line>
                         </svg>
-                        Agenda tu llamada gratuita
+                        Agenda tu diagnóstico gratuito
                     </a>
-                    <a href="https://wa.me/56951022966?text=Hola%2C%20quiero%20probar%20el%20sistema%20en%20vivo" class="btn btn-whatsapp" target="_blank">
+                    <a href="https://wa.me/56951022966?text=Hola%2C%20quiero%20ver%20una%20demo%20de%20FluxVenta" class="btn btn-whatsapp" target="_blank">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                         </svg>
@@ -1267,7 +1418,7 @@
                     </a>
                 </div>
                 <p class="hero-note">Para PYMEs con 50+ consultas mensuales por WhatsApp</p>
-                <p class="hero-note" style="margin-top:0.25rem;">👆 El botón verde abre WhatsApp y el sistema responde al instante. Probalo.</p>
+                <p class="hero-note" style="margin-top:0.25rem;">👆 El botón verde abre WhatsApp y el sistema responde al instante. Pruébalo.</p>
             </div>
             <div class="hero-image">
                 <div class="whatsapp-mock">
@@ -1304,7 +1455,7 @@
                             <span class="mock-time">09:03</span>
                         </div>
                         <div class="mock-msg received">
-                            <p>Tenemos un flujo específico para inmobiliarias. ¿Querés ver una mini demo de cómo respondería el sistema a uno de tus clientes? 👇</p>
+                            <p>Tenemos un flujo específico para inmobiliarias. ¿Quieres ver una mini demo de cómo respondería el sistema a uno de tus clientes? 👇</p>
                             <span class="mock-time">09:03</span>
                         </div>
                     </div>
@@ -1495,7 +1646,7 @@
             <div class="faq-grid">
                 <div class="faq-item">
                     <h4>¿Usan WhatsApp Business API oficial?</h4>
-                    <p>Sí. Trabajamos exclusivamente con la API oficial de Meta (WhatsApp Cloud API). Esto garantiza que tu número no sea suspendido y que la integración sea estable a largo plazo.</p>
+                    <p>Sí. Al usar la API oficial de WhatsApp Cloud API de Meta, minimizamos el riesgo de suspensión y garantizamos integraciones estables, siempre operando dentro de las políticas oficiales de la plataforma.</p>
                 </div>
                 <div class="faq-item">
                     <h4>¿Qué pasa si la IA no sabe responder algo?</h4>
@@ -1511,11 +1662,53 @@
                 </div>
                 <div class="faq-item">
                     <h4>¿Qué necesita mi negocio para empezar?</h4>
-                    <p>Un número de WhatsApp Business (puede ser el que ya usás), acceso a tu cuenta de Meta Business y 30 minutos para la llamada de diagnóstico. Nosotros hacemos el resto.</p>
+                    <p>Un número de WhatsApp Business (puede ser el que ya usas), acceso a tu cuenta de Meta Business y 30 minutos para la llamada de diagnóstico. Nosotros hacemos el resto.</p>
                 </div>
                 <div class="faq-item">
                     <h4>¿Qué incluye el servicio mensual?</h4>
                     <p>Monitoreo del sistema, ajustes de flujos, optimización de respuestas del bot, soporte ante incidencias y una revisión mensual de métricas contigo. El sistema no queda solo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resultados Típicos Section -->
+    <section class="resultados" id="resultados">
+        <div class="container">
+            <div class="section-header">
+                <h2>Resultados típicos por rubro</h2>
+                <p>Basado en implementaciones de referencia en el sector</p>
+            </div>
+            <div class="resultados-grid">
+                <div class="resultado-card">
+                    <div class="card-header">
+                        <div class="card-icon">🏠</div>
+                        <h3>Inmobiliaria <span>3-8 agentes</span></h3>
+                    </div>
+                    <div class="situacion-previa">
+                        <p>Respondían consultas de portales 4-6 horas después. Sin seguimiento sistemático.</p>
+                    </div>
+                    <ul class="resultados-lista">
+                        <li>Tiempo de primera respuesta: de 4h a menos de 5 segundos</li>
+                        <li>Leads recontactados automáticamente: 100% en las primeras 24h</li>
+                        <li>Reuniones agendadas sin intervención humana: ~40% del total</li>
+                    </ul>
+                    <p class="card-note">Ejemplo representativo. Los resultados varían según volumen y proceso previo.</p>
+                </div>
+                <div class="resultado-card">
+                    <div class="card-header">
+                        <div class="card-icon">💆</div>
+                        <h3>Clínica Estética <span>1-3 profesionales + recepción</span></h3>
+                    </div>
+                    <div class="situacion-previa">
+                        <p>Consultas de Instagram y WhatsApp mezcladas, sin registro centralizado.</p>
+                    </div>
+                    <ul class="resultados-lista">
+                        <li>Consultas sin respuesta: de ~35% a menos del 5%</li>
+                        <li>Pipeline de leads centralizado: de 0 a visibilidad total</li>
+                        <li>Horas de gestión manual por semana ahorradas: 8-12h</li>
+                    </ul>
+                    <p class="card-note">Ejemplo representativo. Los resultados varían según volumen y proceso previo.</p>
                 </div>
             </div>
         </div>
@@ -1528,27 +1721,42 @@
                 <h2>Inversión</h2>
                 <p>Cada negocio es distinto. La inversión depende del tamaño de tu operación, los canales que uses y la complejidad del flujo.</p>
             </div>
-            <div class="pricing-cards" style="max-width: 600px;">
-                <div class="pricing-card featured" style="text-align: center;">
-                    <h3>¿Cuánto cuesta?</h3>
-                    <p class="description" style="margin-top: 1rem;">Lo definimos juntos en una llamada de 30 minutos. Analizamos tu situación actual y te presentamos una propuesta a medida, sin compromiso.</p>
-                    <ul style="text-align: left; margin-bottom: 2rem;">
-                        <li>Sin contratos de largo plazo</li>
-                        <li>Licencias de software incluidas</li>
-                        <li>Soporte y optimización continua</li>
-                        <li>Implementación en 2-3 semanas</li>
+            <div class="inversion-grid">
+                <div class="inversion-block">
+                    <h3>Implementación</h3>
+                    <p class="block-subtitle">Setup único — 21 días</p>
+                    <ul>
+                        <li>Configuración del agente de IA para tu rubro</li>
+                        <li>Integración con WhatsApp Cloud API oficial</li>
+                        <li>Setup del CRM y pipeline de leads</li>
+                        <li>Configuración de flujos de seguimiento automático</li>
+                        <li>Capacitación y pruebas con tu equipo</li>
                     </ul>
-                    <a href="#" class="btn btn-primary" onclick="openCalendly()" style="width: 100%; justify-content: center;">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                            <line x1="16" y1="2" x2="16" y2="6"></line>
-                            <line x1="8" y1="2" x2="8" y2="6"></line>
-                            <line x1="3" y1="10" x2="21" y2="10"></line>
-                        </svg>
-                        Agendar llamada gratuita
-                    </a>
-                    <p style="margin-top: 1rem; font-size: 0.875rem; color: var(--gray);">30 minutos · Sin compromiso · Respuesta en menos de 2 horas</p>
                 </div>
+                <div class="inversion-block">
+                    <h3>Operación mensual</h3>
+                    <p class="block-subtitle">Retainer continuo</p>
+                    <ul>
+                        <li>Monitoreo continuo del agente</li>
+                        <li>Ajustes y optimización de respuestas</li>
+                        <li>Revisión mensual de métricas y conversiones</li>
+                        <li>Soporte ante cambios de políticas de Meta</li>
+                        <li>Incorporación de nuevos flujos según necesidad</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+                <p style="color: var(--gray); margin-bottom: 1.5rem;">El precio exacto lo definimos juntos en una llamada de 30 minutos. Analizamos tu situación actual y te presentamos una propuesta a medida, sin compromiso.</p>
+                <a href="#" class="btn btn-primary" onclick="openCalendly()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    Agenda tu diagnóstico gratuito
+                </a>
+                <p style="margin-top: 1rem; font-size: 0.875rem; color: var(--gray);">30 minutos · Sin compromiso · Respuesta en menos de 2 horas</p>
             </div>
         </div>
     </section>
@@ -1561,7 +1769,7 @@
                     <h2>¿Tienes preguntas?</h2>
                     <p>Escríbenos o agenda una llamada. Respondemos en menos de 2 horas en horario laboral.</p>
                     <div class="contacto-methods">
-                        <a href="https://wa.me/56951022966?text=Hola%2C%20quiero%20probar%20el%20sistema%20en%20vivo" class="contact-method" target="_blank">
+                        <a href="https://wa.me/56951022966?text=Hola%2C%20quiero%20ver%20una%20demo%20de%20FluxVenta" class="contact-method" target="_blank">
                             <div class="method-icon">
                                 <svg viewBox="0 0 24 24" fill="#25D366">
                                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
@@ -1569,7 +1777,7 @@
                             </div>
                             <div class="method-text">
                                 <strong>Ver demo en vivo</strong>
-                                <span>El bot responde al instante — probalo ahora</span>
+                                <span>El bot responde al instante — pruébalo ahora</span>
                             </div>
                         </a>
                         <a href="/cdn-cgi/l/email-protection#d0b3bfbea4b1b3a4bf90b6bca5a8a6b5bea4b1feb3bfbd" class="contact-method">
@@ -1658,13 +1866,13 @@
                         <line x1="8" y1="2" x2="8" y2="6"></line>
                         <line x1="3" y1="10" x2="21" y2="10"></line>
                     </svg>
-                    Agenda tu llamada gratuita
+                    Agenda tu diagnóstico gratuito
                 </a>
-                <a href="https://wa.me/56951022966?text=Hola%2C%20quiero%20probar%20el%20sistema%20en%20vivo" class="btn btn-whatsapp" target="_blank">
+                <a href="https://wa.me/56951022966?text=Hola%2C%20quiero%20ver%20una%20demo%20de%20FluxVenta" class="btn btn-whatsapp" target="_blank">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                     </svg>
-                    O ver demo en vivo por WhatsApp
+                    Ver demo en vivo →
                 </a>
             </div>
             <p class="cta-note">Sin compromiso • 30 minutos • Te mostramos cómo funcionaría en tu negocio</p>
@@ -1811,4 +2019,11 @@
             });
         }, observerOptions);
 
-        // Observe elem
+        // Observe elements for animation
+        document.querySelectorAll('section').forEach(el => {
+            el.style.opacity = '1';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
