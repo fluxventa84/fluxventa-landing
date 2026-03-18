@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.fluxventa.com/</loc>
+    <loc>https://fluxventa.com/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.fluxventa.com/privacidad.html</loc>
+    <loc>https://fluxventa.com/privacidad.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://www.fluxventa.com/inmobiliarias</loc>
+    <loc>https://fluxventa.com/inmobiliarias</loc>
     <lastmod>2026-03-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.fluxventa.com/clinicas-esteticas</loc>
+    <loc>https://fluxventa.com/clinicas-esteticas</loc>
     <lastmod>2026-03-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.fluxventa.com/servicios-b2b</loc>
+    <loc>https://fluxventa.com/servicios-b2b</loc>
     <lastmod>2026-03-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.fluxventa.com/formacion</loc>
+    <loc>https://fluxventa.com/formacion</loc>
     <lastmod>2026-03-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
