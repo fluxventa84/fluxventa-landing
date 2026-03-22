@@ -26,7 +26,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
+
+    <!-- Calendly widget -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
     <style>
         /* ========== RESET & BASE ========== */
         *, *::before, *::after {
@@ -927,72 +931,6 @@
             visibility: visible;
         }
 
-        /* ========== CALENDLY MODAL ========== */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.7);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 2000;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-        }
-
-        .modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .modal-content {
-            background: var(--white);
-            border-radius: 16px;
-            width: 90%;
-            max-width: 700px;
-            max-height: 90vh;
-            overflow: hidden;
-            position: relative;
-            transform: scale(0.9);
-            transition: var(--transition);
-        }
-
-        .modal-overlay.active .modal-content {
-            transform: scale(1);
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            width: 40px;
-            height: 40px;
-            background: var(--light);
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 10;
-            transition: var(--transition);
-        }
-
-        .modal-close:hover {
-            background: var(--error);
-            color: var(--white);
-        }
-
-        .calendly-embed {
-            width: 100%;
-            height: 700px;
-            border: none;
-        }
-
         /* ========== RESPONSIVE ========== */
         @media (max-width: 992px) {
             .hero .container {
@@ -1707,7 +1645,7 @@
                 <h1>¿Cuántas ventas pierdes porque <span>nadie responde a tiempo</span>?</h1>
                 <p>Implementamos un sistema que responde automáticamente a tus clientes 24/7, hace seguimiento sin olvidar a nadie, y ordena todos tus leads en un solo lugar.</p>
                 <div class="hero-buttons">
-                    <a href="#" class="btn btn-primary" onclick="gtag('event','clic_calendly',{page_section:'hero',page_location:window.location.pathname});openCalendly()">
+                    <a href="#" class="btn btn-primary" onclick="gtag('event','clic_calendly',{page_section:'hero',page_location:window.location.pathname});Calendly.initPopupWidget({url: 'https://calendly.com/alejandro-fluxventa/30min'});return false;">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
                             <line x1="16" y1="2" x2="16" y2="6"></line>
@@ -2040,7 +1978,7 @@
                     <p class="sim-result-tertiary">Basado en <span id="sim-leads-perdidos">0</span> leads sin contactar a tiempo cada mes</p>
                     <p class="sim-disclaimer">Estimación orientativa basada en datos de la industria. Los resultados reales dependen de múltiples factores del negocio.</p>
                     <div class="sim-cta">
-                        <a href="https://calendly.com/alejandro-fluxventa/30min" class="btn btn-primary" target="_blank" onclick="gtag('event','clic_calendly',{page_section:'simulador',page_location:window.location.pathname})">Quiero recuperar esas ventas → Agenda tu diagnóstico</a>
+                        <a href="#" class="btn btn-primary" onclick="gtag('event','clic_calendly',{page_section:'simulador',page_location:window.location.pathname});Calendly.initPopupWidget({url: 'https://calendly.com/alejandro-fluxventa/30min'});return false;">Quiero recuperar esas ventas → Agenda tu diagnóstico</a>
                         <a href="https://wa.me/56951022966?text=Hola%2C%20quiero%20ver%20una%20demo%20de%20FluxVenta" class="sim-link" target="_blank" onclick="gtag('event','clic_whatsapp_demo',{page_section:'simulador',page_location:window.location.pathname})">Ver cómo funciona en mi rubro →</a>
                     </div>
                 </div>
@@ -2236,7 +2174,7 @@
             </div>
             <div style="text-align: center; max-width: 600px; margin: 0 auto;">
                 <p style="color: var(--gray); margin-bottom: 1.5rem;">El precio exacto lo definimos juntos en una llamada de 30 minutos. Analizamos tu situación actual y te presentamos una propuesta a medida, sin compromiso.</p>
-                <a href="#" class="btn btn-primary" onclick="gtag('event','clic_calendly',{page_section:'inversion',page_location:window.location.pathname});openCalendly()">
+                <a href="#" class="btn btn-primary" onclick="gtag('event','clic_calendly',{page_section:'inversion',page_location:window.location.pathname});Calendly.initPopupWidget({url: 'https://calendly.com/alejandro-fluxventa/30min'});return false;">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
                         <line x1="16" y1="2" x2="16" y2="6"></line>
@@ -2269,7 +2207,7 @@
                                 <span>El bot responde al instante — pruébalo ahora</span>
                             </div>
                         </a>
-                        <a href="/cdn-cgi/l/email-protection#d0b3bfbea4b1b3a4bf90b6bca5a8a6b5bea4b1feb3bfbd" class="contact-method">
+                        <div class="contact-method">
                             <div class="method-icon">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="var(--secondary)" stroke-width="2">
                                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
@@ -2277,11 +2215,11 @@
                                 </svg>
                             </div>
                             <div class="method-text">
-                                <strong><span class="__cf_email__" data-cfemail="c8aba7a6bca9abbca788aea4bdb0beada6bca9e6aba7a5">[email&#160;protected]</span></strong>
+                                <strong>contacto@fluxventa.com</strong>
                                 <span>Te respondemos en &lt;2 horas</span>
                             </div>
-                        </a>
-                        <a href="#" class="contact-method" onclick="gtag('event','clic_calendly',{page_section:'contacto',page_location:window.location.pathname});openCalendly(); return false;">
+                        </div>
+                        <a href="#" class="contact-method" onclick="gtag('event','clic_calendly',{page_section:'contacto',page_location:window.location.pathname});Calendly.initPopupWidget({url: 'https://calendly.com/alejandro-fluxventa/30min'});return false;; return false;">
                             <div class="method-icon">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="var(--secondary)" stroke-width="2">
                                     <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
@@ -2348,7 +2286,7 @@
             <h2>¿Listo para dejar de perder ventas?</h2>
             <p>Agenda una llamada de diagnóstico gratuito y te mostramos exactamente cómo funcionaría en tu negocio.</p>
             <div class="cta-buttons">
-                <a href="#" class="btn btn-primary" onclick="gtag('event','clic_calendly',{page_section:'cta_final',page_location:window.location.pathname});openCalendly()">
+                <a href="#" class="btn btn-primary" onclick="gtag('event','clic_calendly',{page_section:'cta_final',page_location:window.location.pathname});Calendly.initPopupWidget({url: 'https://calendly.com/alejandro-fluxventa/30min'});return false;">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
                         <line x1="16" y1="2" x2="16" y2="6"></line>
@@ -2374,7 +2312,7 @@
             <div class="footer-content">
                 <div class="footer-logo">Flux<span>Venta</span></div>
                 <div class="footer-contact">
-                    <a href="/cdn-cgi/l/email-protection#b8dbd7d6ccd9dbccd7f8ded4cdc0ceddd6ccd996dbd7d5"><span class="__cf_email__" data-cfemail="e3808c8d978280978ca3858f969b95868d9782cd808c8e">[email&#160;protected]</span></a>
+                    <span style="color:rgba(255,255,255,0.8);">contacto@fluxventa.com</span>
                     <a href="https://wa.me/56951022966" target="_blank">+56 9 5102 2966</a>
                     <span>Santiago, Chile</span>
                 </div>
@@ -2393,20 +2331,7 @@
         <span class="tooltip">¿Necesitas ayuda?</span>
     </a>
 
-    <!-- Calendly Modal -->
-    <div class="modal-overlay" id="calendly-modal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeCalendly()">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-            </button>
-            <iframe class="calendly-embed" src="" id="calendly-iframe"></iframe>
-        </div>
-    </div>
-
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         // Mobile Menu Toggle
         function toggleMenu() {
             document.getElementById('nav').classList.toggle('active');
@@ -2419,37 +2344,6 @@
             });
         });
 
-        // Calendly Modal
-        function openCalendly() {
-            const modal = document.getElementById('calendly-modal');
-            const iframe = document.getElementById('calendly-iframe');
-            iframe.src = 'https://calendly.com/alejandro-fluxventa/30min?embed_domain=' + window.location.hostname + '&embed_type=Inline';
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeCalendly() {
-            const modal = document.getElementById('calendly-modal');
-            const iframe = document.getElementById('calendly-iframe');
-            modal.classList.remove('active');
-            iframe.src = '';
-            document.body.style.overflow = '';
-        }
-
-        // Close modal on overlay click
-        document.getElementById('calendly-modal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeCalendly();
-            }
-        });
-
-        // Close modal on ESC key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeCalendly();
-            }
-        });
-
         // Header scroll effect
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
@@ -2460,21 +2354,43 @@
             }
         });
 
-        // Form submission feedback
+        // Form submission with fetch, timeout, and error handling
         const form = document.getElementById('contact-form');
         if (form) {
             form.addEventListener('submit', function(e) {
+                e.preventDefault();
                 gtag('event', 'form_contacto_enviado', {page_location: window.location.pathname});
                 const btn = form.querySelector('button[type="submit"]');
+                const originalText = btn.textContent;
                 btn.textContent = 'Enviando...';
                 btn.disabled = true;
-            });
-        }
 
-        // Check if form was submitted (redirect back)
-        if (window.location.search.includes('enviado=true')) {
-            alert('¡Gracias por tu mensaje! Te contactaremos pronto.');
-            window.history.replaceState({}, document.title, window.location.pathname);
+                var controller = new AbortController();
+                var timeoutId = setTimeout(function() { controller.abort(); }, 10000);
+
+                fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { 'Accept': 'application/json' },
+                    signal: controller.signal
+                })
+                .then(function(response) {
+                    clearTimeout(timeoutId);
+                    if (response.ok) {
+                        btn.textContent = 'Enviado';
+                        form.reset();
+                        alert('¡Mensaje enviado! Te respondemos en menos de 2 horas.');
+                    } else {
+                        throw new Error('Error del servidor');
+                    }
+                })
+                .catch(function(err) {
+                    clearTimeout(timeoutId);
+                    btn.textContent = originalText;
+                    btn.disabled = false;
+                    alert('Hubo un problema al enviar. Escríbenos directamente a contacto@fluxventa.com');
+                });
+            });
         }
 
         // Smooth scroll for anchor links
